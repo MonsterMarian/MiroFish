@@ -26,5 +26,9 @@
   "de": {
     "label": "Deutsch",
     "llmInstruction": "Bitte antworten Sie auf Deutsch."
+  },
+  "cs": {
+    "label": "Čeština",
+    "llmInstruction": "Odpovídejte prosím česky."
   }
 }

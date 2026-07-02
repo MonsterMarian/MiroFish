@@ -313,21 +313,7 @@ const startSimulation = () => {
 
 <style scoped>
 /* 全局变量与重置 */
-:root {
-  --black: #000000;
-  --white: #FFFFFF;
-  --orange: #FF4500;
-  --gray-light: #F5F5F5;
-  --gray-text: #666666;
-  --border: #E5E5E5;
-  /* 
-    使用 Space Grotesk 作为主要标题字体，JetBrains Mono 作为代码/标签字体
-    确保已在 index.html 引入这些 Google Fonts 
-  */
-  --font-mono: 'JetBrains Mono', monospace;
-  --font-sans: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
-  --font-cn: 'Noto Sans SC', system-ui, sans-serif;
-}
+
 
 .home-container {
   min-height: 100vh;
@@ -419,7 +405,7 @@ const startSimulation = () => {
 }
 
 .version-text {
-  color: #999;
+  color: var(--text-secondary);
   font-weight: 500;
   letter-spacing: 0.5px;
 }
@@ -434,7 +420,7 @@ const startSimulation = () => {
 }
 
 .gradient-text {
-  background: linear-gradient(90deg, #000000 0%, #444444 100%);
+  background: linear-gradient(90deg, var(--accent) 0%, var(--accent-hover) 100%);
   -webkit-background-clip: text;
   -webkit-text-fill-color: transparent;
   display: inline-block;
@@ -466,7 +452,7 @@ const startSimulation = () => {
 }
 
 .highlight-code {
-  background: rgba(0, 0, 0, 0.05);
+  background: rgba(0, 0, 0, 0.4);
   padding: 2px 6px;
   border-radius: 2px;
   font-family: var(--font-mono);
@@ -563,7 +549,7 @@ const startSimulation = () => {
 .panel-header {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #999;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
   gap: 8px;
@@ -608,7 +594,7 @@ const startSimulation = () => {
 
 .metric-label {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 /* 项目模拟步骤介绍 */
@@ -621,7 +607,7 @@ const startSimulation = () => {
 .steps-header {
   font-family: var(--font-mono);
   font-size: 0.8rem;
-  color: #999;
+  color: var(--text-secondary);
   margin-bottom: 25px;
   display: flex;
   align-items: center;
@@ -673,7 +659,7 @@ const startSimulation = () => {
 }
 
 .console-box {
-  border: 1px solid #CCC; /* 外部实线 */
+  border: 1px solid var(--border); /* 外部实线 */
   padding: 8px; /* 内边距形成双重边框感 */
 }
 
@@ -691,11 +677,11 @@ const startSimulation = () => {
   margin-bottom: 15px;
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .upload-zone {
-  border: 1px dashed #CCC;
+  border: 1px dashed var(--border);
   height: 200px;
   overflow-y: auto;
   display: flex;
@@ -703,7 +689,7 @@ const startSimulation = () => {
   justify-content: center;
   cursor: pointer;
   transition: all 0.3s;
-  background: #FAFAFA;
+  background: var(--bg-dark);
 }
 
 .upload-zone.has-files {
@@ -711,8 +697,8 @@ const startSimulation = () => {
 }
 
 .upload-zone:hover {
-  background: #F0F0F0;
-  border-color: #999;
+  background: var(--bg-dark);
+  border-color: var(--text-secondary);
 }
 
 .upload-placeholder {
@@ -722,12 +708,12 @@ const startSimulation = () => {
 .upload-icon {
   width: 40px;
   height: 40px;
-  border: 1px solid #DDD;
+  border: 1px solid var(--border);
   display: flex;
   align-items: center;
   justify-content: center;
   margin: 0 auto 15px;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 .upload-title {
@@ -739,7 +725,7 @@ const startSimulation = () => {
 .upload-hint {
   font-family: var(--font-mono);
   font-size: 0.75rem;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 .file-list {
@@ -755,7 +741,7 @@ const startSimulation = () => {
   align-items: center;
   background: var(--white);
   padding: 8px 12px;
-  border: 1px solid #EEE;
+  border: 1px solid var(--border);
   font-family: var(--font-mono);
   font-size: 0.85rem;
 }
@@ -770,7 +756,7 @@ const startSimulation = () => {
   border: none;
   cursor: pointer;
   font-size: 1.2rem;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 .console-divider {
@@ -784,7 +770,7 @@ const startSimulation = () => {
   content: '';
   flex: 1;
   height: 1px;
-  background: #EEE;
+  background: var(--surface-hover);
 }
 
 .console-divider span {
@@ -797,8 +783,8 @@ const startSimulation = () => {
 
 .input-wrapper {
   position: relative;
-  border: 1px solid #DDD;
-  background: #FAFAFA;
+  border: 1px solid var(--border);
+  background: var(--bg-dark);
 }
 
 .code-input {
@@ -861,7 +847,7 @@ const startSimulation = () => {
 
 .start-engine-btn:disabled {
   background: #E5E5E5;
-  color: #999;
+  color: var(--text-secondary);
   cursor: not-allowed;
   transform: none;
   border: 1px solid #E5E5E5;
@@ -869,7 +855,7 @@ const startSimulation = () => {
 
 /* 引导动画：微妙的边框脉冲 */
 @keyframes pulse-border {
-  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.2); }
+  0% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0.4); }
   70% { box-shadow: 0 0 0 6px rgba(0, 0, 0, 0); }
   100% { box-shadow: 0 0 0 0 rgba(0, 0, 0, 0); }
 }

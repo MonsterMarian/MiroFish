@@ -1088,7 +1088,7 @@ onUnmounted(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #FAFAFA;
+  background: var(--bg-dark);
   font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
 }
 
@@ -1103,10 +1103,10 @@ onUnmounted(() => {
 
 /* Step Card */
 .step-card {
-  background: #FFF;
+  background: var(--surface);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   border: 1px solid #EAEAEA;
   transition: all 0.3s ease;
   position: relative;
@@ -1139,7 +1139,7 @@ onUnmounted(() => {
 
 .step-card.active .step-num,
 .step-card.completed .step-num {
-  color: #000;
+  color: var(--text-primary);
 }
 
 .step-title {
@@ -1157,8 +1157,8 @@ onUnmounted(() => {
 }
 
 .badge.success { background: #E8F5E9; color: #2E7D32; }
-.badge.processing { background: #FF5722; color: #FFF; }
-.badge.pending { background: #F5F5F5; color: #999; }
+.badge.processing { background: #FF5722; color: var(--text-primary); }
+.badge.pending { background: var(--bg-dark); color: var(--text-secondary); }
 .badge.accent { background: #E3F2FD; color: #1565C0; }
 
 .card-content {
@@ -1168,13 +1168,13 @@ onUnmounted(() => {
 .api-note {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #999;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -1198,8 +1198,8 @@ onUnmounted(() => {
 }
 
 .action-btn.primary {
-  background: #000;
-  color: #FFF;
+  background: var(--surface-hover);
+  color: var(--text-primary);
 }
 
 .action-btn.primary:hover:not(:disabled) {
@@ -1207,8 +1207,8 @@ onUnmounted(() => {
 }
 
 .action-btn.secondary {
-  background: #F5F5F5;
-  color: #333;
+  background: var(--bg-dark);
+  color: var(--text-primary);
 }
 
 .action-btn.secondary:hover:not(:disabled) {
@@ -1237,7 +1237,7 @@ onUnmounted(() => {
 
 /* Info Card */
 .info-card {
-  background: #F5F5F5;
+  background: var(--bg-dark);
   border-radius: 6px;
   padding: 16px;
   margin-top: 16px;
@@ -1257,7 +1257,7 @@ onUnmounted(() => {
 
 .info-label {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .info-value {
@@ -1288,13 +1288,13 @@ onUnmounted(() => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
 }
 
 .stat-label {
   font-size: 9px;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   margin-top: 4px;
   display: block;
@@ -1317,7 +1317,7 @@ onUnmounted(() => {
 .preview-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1345,7 +1345,7 @@ onUnmounted(() => {
 }
 
 .profile-card {
-  background: #FAFAFA;
+  background: var(--bg-dark);
   border: 1px solid #E5E5E5;
   border-radius: 6px;
   padding: 14px;
@@ -1354,8 +1354,8 @@ onUnmounted(() => {
 }
 
 .profile-card:hover {
-  border-color: #999;
-  background: #FFF;
+  border-color: var(--text-secondary);
+  background: var(--surface);
 }
 
 .profile-header {
@@ -1368,13 +1368,13 @@ onUnmounted(() => {
 .profile-realname {
   font-size: 14px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
 }
 
 .profile-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 11px;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 .profile-meta {
@@ -1383,15 +1383,15 @@ onUnmounted(() => {
 
 .profile-profession {
   font-size: 11px;
-  color: #666;
-  background: #F0F0F0;
+  color: var(--text-secondary);
+  background: var(--bg-dark);
   padding: 2px 8px;
   border-radius: 3px;
 }
 
 .profile-bio {
   font-size: 12px;
-  color: #444;
+  color: var(--text-primary);
   line-height: 1.6;
   margin: 0 0 10px 0;
   display: -webkit-box;
@@ -1416,7 +1416,7 @@ onUnmounted(() => {
 
 .topic-more {
   font-size: 10px;
-  color: #999;
+  color: var(--text-secondary);
   padding: 2px 6px;
 }
 
@@ -1448,7 +1448,7 @@ onUnmounted(() => {
 .config-block-title {
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
 }
@@ -1563,8 +1563,8 @@ onUnmounted(() => {
 }
 
 .agent-card:hover {
-  border-color: #999;
-  background: #FFF;
+  border-color: var(--text-secondary);
+  background: var(--surface);
 }
 
 /* Agent Card Header */
@@ -1762,7 +1762,7 @@ onUnmounted(() => {
 .platform-name {
   font-size: 13px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .platform-params {
@@ -1804,7 +1804,7 @@ onUnmounted(() => {
 
 .reasoning-text {
   font-size: 13px;
-  color: #555;
+  color: var(--text-primary);
   line-height: 1.7;
   margin: 0;
 }
@@ -1816,7 +1816,7 @@ onUnmounted(() => {
   left: 0;
   right: 0;
   bottom: 0;
-  background: rgba(0, 0, 0, 0.6);
+  background: rgba(0, 0, 0, 0.4);
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1825,7 +1825,7 @@ onUnmounted(() => {
 }
 
 .profile-modal {
-  background: #FFF;
+  background: var(--surface);
   border-radius: 16px;
   width: 90%;
   max-width: 600px;
@@ -1833,7 +1833,7 @@ onUnmounted(() => {
   overflow: hidden;
   display: flex;
   flex-direction: column;
-  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.3);
+  box-shadow: 0 20px 60px rgba(0, 0, 0, 0.4);
 }
 
 .modal-header {
@@ -1841,7 +1841,7 @@ onUnmounted(() => {
   justify-content: space-between;
   align-items: flex-start;
   padding: 24px;
-  background: #FFF;
+  background: var(--surface);
   border-bottom: 1px solid #F0F0F0;
 }
 
@@ -1859,19 +1859,19 @@ onUnmounted(() => {
 .modal-realname {
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
 }
 
 .modal-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 13px;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 .modal-profession {
   font-size: 12px;
-  color: #666;
-  background: #F5F5F5;
+  color: var(--text-secondary);
+  background: var(--bg-dark);
   padding: 4px 10px;
   border-radius: 4px;
   display: inline-block;
@@ -1883,7 +1883,7 @@ onUnmounted(() => {
   height: 32px;
   border: none;
   background: none;
-  color: #999;
+  color: var(--text-secondary);
   border-radius: 50%;
   font-size: 24px;
   cursor: pointer;
@@ -1896,7 +1896,7 @@ onUnmounted(() => {
 }
 
 .close-btn:hover {
-  color: #333;
+  color: var(--text-primary);
 }
 
 .modal-body {
@@ -1924,7 +1924,7 @@ onUnmounted(() => {
 
 .info-label {
   font-size: 11px;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   font-weight: 600;
@@ -1933,7 +1933,7 @@ onUnmounted(() => {
 .info-value {
   font-size: 15px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .info-value.mbti {
@@ -1950,7 +1950,7 @@ onUnmounted(() => {
   display: block;
   font-size: 11px;
   font-weight: 600;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
@@ -1958,7 +1958,7 @@ onUnmounted(() => {
 
 .section-bio {
   font-size: 14px;
-  color: #333;
+  color: var(--text-primary);
   line-height: 1.6;
   margin: 0;
   padding: 16px;
@@ -2006,22 +2006,22 @@ onUnmounted(() => {
 }
 
 .dimension-card:hover {
-  background: #F0F0F0;
-  border-left-color: #999;
+  background: var(--bg-dark);
+  border-left-color: var(--text-secondary);
 }
 
 .dim-title {
   display: block;
   font-size: 12px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .dim-desc {
   display: block;
   font-size: 10px;
-  color: #888;
+  color: var(--text-secondary);
   line-height: 1.4;
 }
 
@@ -2045,7 +2045,7 @@ onUnmounted(() => {
 
 .section-persona {
   font-size: 13px;
-  color: #555;
+  color: var(--text-primary);
   line-height: 1.8;
   margin: 0;
   text-align: justify;
@@ -2053,7 +2053,7 @@ onUnmounted(() => {
 
 /* System Logs */
 .system-logs {
-  background: #000;
+  background: var(--surface-hover);
   color: #DDD;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
@@ -2068,7 +2068,7 @@ onUnmounted(() => {
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #888;
+  color: var(--text-secondary);
 }
 
 .log-content {
@@ -2097,7 +2097,7 @@ onUnmounted(() => {
 }
 
 .log-time {
-  color: #666;
+  color: var(--text-secondary);
   min-width: 75px;
 }
 
@@ -2131,18 +2131,18 @@ onUnmounted(() => {
   display: block;
   font-size: 12px;
   font-weight: 600;
-  color: #666;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
 }
 
 .narrative-box {
-  background: #FFFFFF;
+  background: var(--surface);
   padding: 20px 24px;
   border-radius: 12px;
   border: 1px solid #EEF2F6;
-  box-shadow: 0 4px 24px rgba(0,0,0,0.03);
+  box-shadow: 0 4px 24px rgba(0, 0, 0, 0.4);
   transition: all 0.3s ease;
 }
 
@@ -2150,7 +2150,7 @@ onUnmounted(() => {
   display: flex;
   align-items: center;
   gap: 8px;
-  color: #666;
+  color: var(--text-secondary);
   font-size: 13px;
   letter-spacing: 0.5px;
   margin-bottom: 12px;
@@ -2177,7 +2177,7 @@ onUnmounted(() => {
 }
 
 .topics-section {
-  background: #FFF;
+  background: var(--surface);
 }
 
 .hot-topics-grid {
@@ -2189,7 +2189,7 @@ onUnmounted(() => {
 .hot-topic-tag {
   font-size: 12px;
   color:rgba(255, 86, 34, 0.88);
-  background: #FFF3E0;
+  background: var(--surface-hover);
   padding: 4px 10px;
   border-radius: 12px;
   font-weight: 500;
@@ -2197,7 +2197,7 @@ onUnmounted(() => {
 
 .hot-topic-more {
   font-size: 11px;
-  color: #999;
+  color: var(--text-secondary);
   padding: 4px 6px;
 }
 
@@ -2233,7 +2233,7 @@ onUnmounted(() => {
   background: #F9F9F9;
   padding: 12px;
   border-radius: 6px;
-  border: 1px solid #EEE;
+  border: 1px solid var(--border);
 }
 
 .post-header {
@@ -2245,7 +2245,7 @@ onUnmounted(() => {
 .post-role {
   font-size: 11px;
   font-weight: 700;
-  color: #333;
+  color: var(--text-primary);
   text-transform: uppercase;
 }
 
@@ -2259,7 +2259,7 @@ onUnmounted(() => {
 .post-username {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1;
   vertical-align: baseline;
 }
@@ -2270,7 +2270,7 @@ onUnmounted(() => {
 
 .post-text {
   font-size: 12px;
-  color: #555;
+  color: var(--text-primary);
   line-height: 1.5;
   margin: 0;
 }
@@ -2351,14 +2351,14 @@ onUnmounted(() => {
   top: 2px;
   width: 16px;
   height: 16px;
-  background: #FFF;
+  background: var(--surface);
   border-radius: 50%;
-  box-shadow: 0 1px 3px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.4);
   transition: transform 0.3s cubic-bezier(0.4, 0.0, 0.2, 1);
 }
 
 .switch-control input:checked + .switch-track {
-  background: #000;
+  background: var(--surface-hover);
 }
 
 .switch-control input:checked + .switch-track::after {
@@ -2397,12 +2397,12 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 24px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
 }
 
 .val-unit {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -2438,10 +2438,10 @@ onUnmounted(() => {
   width: 16px;
   height: 16px;
   border-radius: 50%;
-  background: #FFF;
-  border: 2px solid #000;
+  background: var(--surface);
+  border: 2px solid var(--border);
   cursor: pointer;
-  box-shadow: 0 1px 4px rgba(0,0,0,0.1);
+  box-shadow: 0 1px 4px rgba(0, 0, 0, 0.4);
   transition: transform 0.1s;
   margin-top: -6px; /* Center thumb */
 }
@@ -2472,11 +2472,11 @@ onUnmounted(() => {
 }
 
 .mark-recommend:hover {
-  color: #000;
+  color: var(--text-primary);
 }
 
 .mark-recommend.active {
-  color: #000;
+  color: var(--text-primary);
   font-weight: 600;
 }
 
@@ -2531,11 +2531,11 @@ onUnmounted(() => {
   font-size: 11px;
   font-weight: 500;
   color: #64748B;
-  background: #FFFFFF;
+  background: var(--surface);
   border: 1px solid #E2E8F0;
   padding: 3px 8px;
   border-radius: 6px;
-  box-shadow: 0 1px 2px rgba(0,0,0,0.02);
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.4);
 }
 
 .auto-desc {
@@ -2554,7 +2554,7 @@ onUnmounted(() => {
 .highlight-tip {
   margin-top: 4px !important;
   font-size: 12px !important;
-  color: #000 !important;
+  color: var(--text-primary) !important;
   font-weight: 500;
   cursor: pointer;
 }

@@ -1,0 +1,45 @@
+:root {
+  /* Premium Dark Theme */
+  --bg-dark: #0f172a;
+  --surface: #1e293b;
+  --surface-hover: #334155;
+  --border: #334155;
+  --text-primary: #f8fafc;
+  --text-secondary: #94a3b8;
+  --accent: #f97316;
+  --accent-hover: #ea580c;
+  
+  /* Original aliases mapped to dark theme */
+  --black: #f8fafc; /* Inverted for dark mode */
+  --white: #0f172a; /* Inverted for dark mode */
+  --orange: #f97316;
+  --gray-light: #1e293b;
+  --gray-text: #94a3b8;
+  --gray-border: #334155;
+  
+  /* Fonts */
+  --font-mono: 'JetBrains Mono', monospace;
+  --font-sans: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
+  --font-cn: 'Noto Sans SC', system-ui, sans-serif;
+}
+
+body {
+  background-color: var(--bg-dark);
+  color: var(--text-primary);
+}
+
+/* Ensure global scrollbars look good in dark mode */
+::-webkit-scrollbar {
+  width: 8px;
+  height: 8px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-dark);
+}
+::-webkit-scrollbar-thumb {
+  background: var(--surface-hover);
+  border-radius: 4px;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: var(--text-secondary);
+}

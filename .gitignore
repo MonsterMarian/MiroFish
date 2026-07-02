@@ -58,3 +58,10 @@ backend/uploads/
 
 # Docker 数据
 data/
+
+# Test texts and backups
+test_scenarios/
+frontend/src_backup/
+*.txt
+!requirements.txt
+!frontend/robots.txt

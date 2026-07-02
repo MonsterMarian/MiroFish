@@ -606,8 +606,8 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   background-image: 
-    linear-gradient(to right, rgba(0, 0, 0, 0.05) 1px, transparent 1px),
-    linear-gradient(to bottom, rgba(0, 0, 0, 0.05) 1px, transparent 1px);
+    linear-gradient(to right, rgba(0, 0, 0, 0.4) 1px, transparent 1px),
+    linear-gradient(to bottom, rgba(0, 0, 0, 0.4) 1px, transparent 1px);
   background-size: 50px 50px;
   /* 从左上角开始定位，高度变化时只在底部扩展，不影响已有网格位置 */
   background-position: top left;
@@ -620,8 +620,8 @@ onUnmounted(() => {
   right: 0;
   bottom: 0;
   background: 
-    linear-gradient(to right, rgba(255, 255, 255, 0.9) 0%, transparent 15%, transparent 85%, rgba(255, 255, 255, 0.9) 100%),
-    linear-gradient(to bottom, rgba(255, 255, 255, 0.8) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.8) 100%);
+    linear-gradient(to right, rgba(255, 255, 255, 0.1) 0%, transparent 15%, transparent 85%, rgba(255, 255, 255, 0.1) 100%),
+    linear-gradient(to bottom, rgba(255, 255, 255, 0.1) 0%, transparent 20%, transparent 80%, rgba(255, 255, 255, 0.1) 100%);
   pointer-events: none;
 }
 
@@ -648,7 +648,7 @@ onUnmounted(() => {
 .section-title {
   font-size: 0.8rem;
   font-weight: 500;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   letter-spacing: 3px;
   text-transform: uppercase;
 }
@@ -668,17 +668,17 @@ onUnmounted(() => {
 .project-card {
   position: absolute;
   width: 280px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 0;
   padding: 14px;
   cursor: pointer;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
   transition: box-shadow 0.3s ease, border-color 0.3s ease, transform 700ms cubic-bezier(0.23, 1, 0.32, 1), opacity 700ms cubic-bezier(0.23, 1, 0.32, 1);
 }
 
 .project-card:hover {
-  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.1), 0 4px 6px -2px rgba(0, 0, 0, 0.05);
+  box-shadow: 0 10px 15px -3px rgba(0, 0, 0, 0.4), 0 4px 6px -2px rgba(0, 0, 0, 0.4);
   border-color: rgba(0, 0, 0, 0.4);
   z-index: 1000 !important;
 }
@@ -700,7 +700,7 @@ onUnmounted(() => {
 }
 
 .card-id {
-  color: #6B7280;
+  color: var(--text-secondary);
   letter-spacing: 0.5px;
   font-weight: 500;
 }
@@ -749,8 +749,8 @@ onUnmounted(() => {
 /* 进度状态颜色 */
 .card-progress.completed { color: #10B981; }    /* 已完成 - 绿色 */
 .card-progress.in-progress { color: #F59E0B; }  /* 进行中 - 橙色 */
-.card-progress.not-started { color: #9CA3AF; }  /* 未开始 - 灰色 */
-.card-status.pending { color: #9CA3AF; }
+.card-progress.not-started { color: var(--text-secondary); }  /* 未开始 - 灰色 */
+.card-status.pending { color: var(--text-secondary); }
 
 /* 文件列表区域 */
 .card-files-wrapper {
@@ -780,8 +780,8 @@ onUnmounted(() => {
   padding: 3px 6px;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
-  color: #6B7280;
-  background: rgba(255, 255, 255, 0.5);
+  color: var(--text-secondary);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   letter-spacing: 0.3px;
 }
@@ -791,7 +791,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 4px 6px;
-  background: rgba(255, 255, 255, 0.7);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 3px;
   transition: all 0.2s ease;
 }
@@ -799,7 +799,7 @@ onUnmounted(() => {
 .file-item:hover {
   background: rgba(255, 255, 255, 1);
   transform: translateX(2px);
-  border-color: #e5e7eb;
+  border-color: var(--border);
 }
 
 /* 简约文件标签样式 */
@@ -825,16 +825,16 @@ onUnmounted(() => {
 .file-tag.doc { background: #e6eff5; color: #5a7ea6; }
 .file-tag.xls { background: #e6f2e8; color: #5aa668; }
 .file-tag.ppt { background: #f5efe6; color: #a6815a; }
-.file-tag.txt { background: #f0f0f0; color: #757575; }
+.file-tag.txt { background: var(--bg-dark); color: #757575; }
 .file-tag.code { background: #eae6f2; color: #815aa6; }
 .file-tag.img { background: #e6f2f2; color: #5aa6a6; }
 .file-tag.zip { background: #f2f0e6; color: #a69b5a; }
-.file-tag.other { background: #f3f4f6; color: #6b7280; }
+.file-tag.other { background: var(--surface); color: var(--text-secondary); }
 
 .file-name {
   font-family: 'Inter', sans-serif;
   font-size: 0.7rem;
-  color: #4b5563;
+  color: var(--text-secondary);
   white-space: nowrap;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -848,7 +848,7 @@ onUnmounted(() => {
   justify-content: center;
   gap: 8px;
   height: 48px;
-  color: #9CA3AF;
+  color: var(--text-secondary);
 }
 
 .empty-file-icon {
@@ -864,8 +864,8 @@ onUnmounted(() => {
 
 /* 悬停时文件区域效果 */
 .project-card:hover .card-files-wrapper {
-  border-color: #d1d5db;
-  background: linear-gradient(135deg, #ffffff 0%, #f8f9fa 100%);
+  border-color: var(--border);
+  background: var(--surface);
 }
 
 /* 角落装饰 */
@@ -886,7 +886,7 @@ onUnmounted(() => {
   font-family: 'Inter', -apple-system, sans-serif;
   font-size: 0.9rem;
   font-weight: 700;
-  color: #111827;
+  color: var(--text-primary);
   margin: 0 0 6px 0;
   line-height: 1.4;
   white-space: nowrap;
@@ -903,7 +903,7 @@ onUnmounted(() => {
 .card-desc {
   font-family: 'Inter', sans-serif;
   font-size: 0.75rem;
-  color: #6B7280;
+  color: var(--text-secondary);
   margin: 0 0 16px 0;
   line-height: 1.5;
   height: 34px;
@@ -923,7 +923,7 @@ onUnmounted(() => {
   border-top: 1px solid #F3F4F6;
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.65rem;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   font-weight: 500;
 }
 
@@ -951,7 +951,7 @@ onUnmounted(() => {
 /* 进度状态颜色 - 底部 */
 .card-footer .card-progress.completed { color: #10B981; }
 .card-footer .card-progress.in-progress { color: #F59E0B; }
-.card-footer .card-progress.not-started { color: #9CA3AF; }
+.card-footer .card-progress.not-started { color: var(--text-secondary); }
 
 /* 底部装饰线 */
 .card-bottom-line {
@@ -960,7 +960,7 @@ onUnmounted(() => {
   left: 0;
   height: 2px;
   width: 0;
-  background-color: #000;
+  background: var(--surface-hover);
   transition: width 0.5s cubic-bezier(0.23, 1, 0.32, 1);
   z-index: 20;
 }
@@ -976,7 +976,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 14px;
   padding: 48px;
-  color: #9CA3AF;
+  color: var(--text-secondary);
 }
 
 .empty-icon {
@@ -987,8 +987,8 @@ onUnmounted(() => {
 .loading-spinner {
   width: 24px;
   height: 24px;
-  border: 2px solid #E5E7EB;
-  border-top-color: #6B7280;
+  border: 2px solid var(--border);
+  border-top-color: var(--text-secondary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
 }
@@ -1029,14 +1029,14 @@ onUnmounted(() => {
 }
 
 .modal-content {
-  background: #FFFFFF;
+  background: var(--surface);
   width: 560px;
   max-width: 90vw;
   max-height: 85vh;
   overflow-y: auto;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.1), 0 10px 10px -5px rgba(0, 0, 0, 0.04);
+  box-shadow: 0 20px 25px -5px rgba(0, 0, 0, 0.4), 0 10px 10px -5px rgba(0, 0, 0, 0.4);
 }
 
 /* 动画过渡 */
@@ -1075,7 +1075,7 @@ onUnmounted(() => {
   align-items: center;
   padding: 20px 32px;
   border-bottom: 1px solid #F3F4F6;
-  background: #FFFFFF;
+  background: var(--surface);
 }
 
 .modal-title-section {
@@ -1088,7 +1088,7 @@ onUnmounted(() => {
   font-family: 'JetBrains Mono', monospace;
   font-size: 1rem;
   font-weight: 600;
-  color: #111827;
+  color: var(--text-primary);
   letter-spacing: 0.5px;
 }
 
@@ -1101,17 +1101,17 @@ onUnmounted(() => {
   font-weight: 600;
   padding: 4px 8px;
   border-radius: 4px;
-  background: #F9FAFB;
+  background: var(--surface);
 }
 
 .modal-progress.completed { color: #10B981; background: rgba(16, 185, 129, 0.1); }
 .modal-progress.in-progress { color: #F59E0B; background: rgba(245, 158, 11, 0.1); }
-.modal-progress.not-started { color: #9CA3AF; background: #F3F4F6; }
+.modal-progress.not-started { color: var(--text-secondary); background: var(--surface); }
 
 .modal-create-time {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   letter-spacing: 0.3px;
 }
 
@@ -1121,7 +1121,7 @@ onUnmounted(() => {
   border: none;
   background: transparent;
   font-size: 1.5rem;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   cursor: pointer;
   display: flex;
   align-items: center;
@@ -1131,8 +1131,8 @@ onUnmounted(() => {
 }
 
 .modal-close:hover {
-  background: #F3F4F6;
-  color: #111827;
+  background: var(--surface);
+  color: var(--text-primary);
 }
 
 /* 弹窗内容 */
@@ -1151,7 +1151,7 @@ onUnmounted(() => {
 .modal-label {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #6B7280;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 1px;
   margin-bottom: 10px;
@@ -1160,10 +1160,10 @@ onUnmounted(() => {
 
 .modal-requirement {
   font-size: 0.95rem;
-  color: #374151;
+  color: var(--text-primary);
   line-height: 1.6;
   padding: 16px;
-  background: #F9FAFB;
+  background: var(--surface);
   border: 1px solid #F3F4F6;
   border-radius: 8px;
 }
@@ -1183,12 +1183,12 @@ onUnmounted(() => {
 }
 
 .modal-files::-webkit-scrollbar-track {
-  background: #F3F4F6;
+  background: var(--surface);
   border-radius: 2px;
 }
 
 .modal-files::-webkit-scrollbar-thumb {
-  background: #D1D5DB;
+  background: var(--surface);
   border-radius: 2px;
 }
 
@@ -1201,20 +1201,20 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 10px 14px;
-  background: #FFFFFF;
-  border: 1px solid #E5E7EB;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 6px;
   transition: all 0.2s ease;
 }
 
 .modal-file-item:hover {
-  border-color: #D1D5DB;
-  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.05);
+  border-color: var(--border);
+  box-shadow: 0 1px 2px 0 rgba(0, 0, 0, 0.4);
 }
 
 .modal-file-name {
   font-size: 0.85rem;
-  color: #4B5563;
+  color: var(--text-secondary);
   flex: 1;
   overflow: hidden;
   text-overflow: ellipsis;
@@ -1223,10 +1223,10 @@ onUnmounted(() => {
 
 .modal-empty {
   font-size: 0.85rem;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   padding: 16px;
-  background: #F9FAFB;
-  border: 1px dashed #E5E7EB;
+  background: var(--surface);
+  border: 1px dashed var(--border);
   border-radius: 6px;
   text-align: center;
 }
@@ -1237,7 +1237,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 16px;
   padding: 10px 32px 0;
-  background: #FFFFFF;
+  background: var(--surface);
 }
 
 .divider-line {
@@ -1249,7 +1249,7 @@ onUnmounted(() => {
 .divider-text {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   letter-spacing: 2px;
   text-transform: uppercase;
   white-space: nowrap;
@@ -1260,7 +1260,7 @@ onUnmounted(() => {
   display: flex;
   gap: 16px;
   padding: 20px 32px;
-  background: #FFFFFF;
+  background: var(--surface);
 }
 
 .modal-btn {
@@ -1270,9 +1270,9 @@ onUnmounted(() => {
   align-items: center;
   gap: 8px;
   padding: 16px;
-  border: 1px solid #E5E7EB;
+  border: 1px solid var(--border);
   border-radius: 8px;
-  background: #FFFFFF;
+  background: var(--surface);
   cursor: pointer;
   transition: all 0.2s ease;
   position: relative;
@@ -1280,22 +1280,22 @@ onUnmounted(() => {
 }
 
 .modal-btn:hover:not(:disabled) {
-  border-color: #000000;
+  border-color: var(--text-primary);
   transform: translateY(-2px);
-  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 6px -1px rgba(0, 0, 0, 0.4);
 }
 
 .modal-btn:disabled {
   opacity: 0.5;
   cursor: not-allowed;
-  background: #F9FAFB;
+  background: var(--surface);
 }
 
 .btn-step {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.6rem;
   font-weight: 500;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   letter-spacing: 0.5px;
   text-transform: uppercase;
 }
@@ -1311,7 +1311,7 @@ onUnmounted(() => {
   font-size: 0.75rem;
   font-weight: 600;
   letter-spacing: 0.5px;
-  color: #4B5563;
+  color: var(--text-secondary);
 }
 
 .modal-btn.btn-project .btn-icon { color: #3B82F6; }
@@ -1319,7 +1319,7 @@ onUnmounted(() => {
 .modal-btn.btn-report .btn-icon { color: #10B981; }
 
 .modal-btn:hover:not(:disabled) .btn-text {
-  color: #111827;
+  color: var(--text-primary);
 }
 
 /* 不可回放提示 */
@@ -1328,13 +1328,13 @@ onUnmounted(() => {
   align-items: center;
   justify-content: center;
   padding: 0 32px 20px;
-  background: #FFFFFF;
+  background: var(--surface);
 }
 
 .hint-text {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.7rem;
-  color: #9CA3AF;
+  color: var(--text-secondary);
   letter-spacing: 0.3px;
   text-align: center;
   line-height: 1.5;

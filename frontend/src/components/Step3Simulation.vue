@@ -704,14 +704,14 @@ onUnmounted(() => {
   height: 100%;
   display: flex;
   flex-direction: column;
-  background: #FFFFFF;
+  background: var(--surface);
   font-family: 'Space Grotesk', 'Noto Sans SC', system-ui, sans-serif;
   overflow: hidden;
 }
 
 /* --- Control Bar --- */
 .control-bar {
-  background: #FFF;
+  background: var(--surface);
   padding: 12px 24px;
   display: flex;
   justify-content: space-between;
@@ -733,7 +733,7 @@ onUnmounted(() => {
   gap: 4px;
   padding: 6px 12px;
   border-radius: 4px;
-  background: #FAFAFA;
+  background: var(--bg-dark);
   border: 1px solid #EAEAEA;
   opacity: 0.7;
   transition: all 0.3s;
@@ -744,8 +744,8 @@ onUnmounted(() => {
 
 .platform-status.active {
   opacity: 1;
-  border-color: #333;
-  background: #FFF;
+  border-color: var(--text-primary);
+  background: var(--surface);
 }
 
 .platform-status.completed {
@@ -762,10 +762,10 @@ onUnmounted(() => {
   transform: translateX(-50%);
   margin-top: 8px;
   padding: 10px 14px;
-  background: #000;
-  color: #FFF;
+  background: var(--surface-hover);
+  color: var(--text-primary);
   border-radius: 4px;
-  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.15);
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
   opacity: 0;
   visibility: hidden;
   transition: all 0.2s ease;
@@ -793,7 +793,7 @@ onUnmounted(() => {
 .tooltip-title {
   font-size: 10px;
   font-weight: 600;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.08em;
   margin-bottom: 8px;
@@ -809,9 +809,9 @@ onUnmounted(() => {
   font-size: 10px;
   font-weight: 600;
   padding: 3px 8px;
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(255, 255, 255, 0.1);
   border-radius: 2px;
-  color: #FFF;
+  color: var(--text-primary);
   letter-spacing: 0.03em;
 }
 
@@ -825,13 +825,13 @@ onUnmounted(() => {
 .platform-name {
   font-size: 11px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
 
-.platform-status.twitter .platform-icon { color: #000; }
-.platform-status.reddit .platform-icon { color: #000; }
+.platform-status.twitter .platform-icon { color: var(--text-primary); }
+.platform-status.reddit .platform-icon { color: var(--text-primary); }
 
 .platform-stats {
   display: flex;
@@ -846,7 +846,7 @@ onUnmounted(() => {
 
 .stat-label {
   font-size: 8px;
-  color: #999;
+  color: var(--text-secondary);
   font-weight: 600;
   text-transform: uppercase;
   letter-spacing: 0.05em;
@@ -855,12 +855,12 @@ onUnmounted(() => {
 .stat-value {
   font-size: 11px;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .stat-total, .stat-unit {
   font-size: 9px;
-  color: #999;
+  color: var(--text-secondary);
   font-weight: 400;
 }
 
@@ -888,8 +888,8 @@ onUnmounted(() => {
 }
 
 .action-btn.primary {
-  background: #000;
-  color: #FFF;
+  background: var(--surface-hover);
+  color: var(--text-primary);
 }
 
 .action-btn.primary:hover:not(:disabled) {
@@ -906,14 +906,14 @@ onUnmounted(() => {
   flex: 1;
   overflow-y: auto;
   position: relative;
-  background: #FFF;
+  background: var(--surface);
 }
 
 /* Timeline Header */
 .timeline-header {
   position: sticky;
   top: 0;
-  background: rgba(255, 255, 255, 0.9);
+  background: rgba(255, 255, 255, 0.1);
   backdrop-filter: blur(8px);
   padding: 12px 24px;
   border-bottom: 1px solid #EAEAEA;
@@ -927,15 +927,15 @@ onUnmounted(() => {
   align-items: center;
   gap: 16px;
   font-size: 11px;
-  color: #666;
-  background: #F5F5F5;
+  color: var(--text-secondary);
+  background: var(--bg-dark);
   padding: 4px 12px;
   border-radius: 20px;
 }
 
 .total-count {
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .platform-breakdown {
@@ -951,8 +951,8 @@ onUnmounted(() => {
 }
 
 .breakdown-divider { color: #DDD; }
-.breakdown-item.twitter { color: #000; }
-.breakdown-item.reddit { color: #000; }
+.breakdown-item.twitter { color: var(--text-primary); }
+.breakdown-item.reddit { color: var(--text-primary); }
 
 /* --- Timeline Feed --- */
 .timeline-feed {
@@ -987,8 +987,8 @@ onUnmounted(() => {
   top: 24px;
   width: 10px;
   height: 10px;
-  background: #FFF;
-  border: 1px solid #CCC;
+  background: var(--surface);
+  border: 1px solid var(--border);
   border-radius: 50%;
   transform: translateX(-50%);
   z-index: 2;
@@ -1004,26 +1004,26 @@ onUnmounted(() => {
   border-radius: 50%;
 }
 
-.timeline-item.twitter .marker-dot { background: #000; }
-.timeline-item.reddit .marker-dot { background: #000; }
-.timeline-item.twitter .timeline-marker { border-color: #000; }
-.timeline-item.reddit .timeline-marker { border-color: #000; }
+.timeline-item.twitter .marker-dot { background: var(--surface-hover); }
+.timeline-item.reddit .marker-dot { background: var(--surface-hover); }
+.timeline-item.twitter .timeline-marker { border-color: var(--text-primary); }
+.timeline-item.reddit .timeline-marker { border-color: var(--text-primary); }
 
 /* Card Layout */
 .timeline-card {
   width: calc(100% - 48px);
-  background: #FFF;
+  background: var(--surface);
   border-radius: 2px;
   padding: 16px 20px;
   border: 1px solid #EAEAEA;
-  box-shadow: 0 2px 10px rgba(0,0,0,0.02);
+  box-shadow: 0 2px 10px rgba(0, 0, 0, 0.4);
   position: relative;
   transition: all 0.2s;
 }
 
 .timeline-card:hover {
-  box-shadow: 0 4px 12px rgba(0,0,0,0.05);
-  border-color: #DDD;
+  box-shadow: 0 4px 12px rgba(0, 0, 0, 0.4);
+  border-color: var(--border);
 }
 
 /* Left side (Twitter) */
@@ -1065,8 +1065,8 @@ onUnmounted(() => {
 .avatar-placeholder {
   width: 24px;
   height: 24px;
-  background: #000;
-  color: #FFF;
+  background: var(--surface-hover);
+  color: var(--text-primary);
   border-radius: 50%;
   display: flex;
   align-items: center;
@@ -1079,7 +1079,7 @@ onUnmounted(() => {
 .agent-name {
   font-size: 13px;
   font-weight: 600;
-  color: #000;
+  color: var(--text-primary);
 }
 
 .header-meta {
@@ -1089,7 +1089,7 @@ onUnmounted(() => {
 }
 
 .platform-indicator {
-  color: #999;
+  color: var(--text-secondary);
   display: flex;
   align-items: center;
 }
@@ -1105,33 +1105,33 @@ onUnmounted(() => {
 }
 
 /* Monochromatic Badges */
-.badge-post { background: #F0F0F0; color: #333; border-color: #E0E0E0; }
-.badge-comment { background: #F0F0F0; color: #666; border-color: #E0E0E0; }
-.badge-action { background: #FFF; color: #666; border: 1px solid #E0E0E0; }
-.badge-meta { background: #FAFAFA; color: #999; border: 1px dashed #DDD; }
+.badge-post { background: var(--bg-dark); color: var(--text-primary); border-color: #E0E0E0; }
+.badge-comment { background: var(--bg-dark); color: var(--text-secondary); border-color: #E0E0E0; }
+.badge-action { background: var(--surface); color: var(--text-secondary); border: 1px solid #E0E0E0; }
+.badge-meta { background: var(--bg-dark); color: var(--text-secondary); border: 1px dashed var(--border); }
 .badge-idle { opacity: 0.5; }
 
 .content-text {
   font-size: 13px;
   line-height: 1.6;
-  color: #333;
+  color: var(--text-primary);
   margin-bottom: 10px;
 }
 
 .content-text.main-text {
   font-size: 14px;
-  color: #000;
+  color: var(--text-primary);
 }
 
 /* Info Blocks (Quote, Repost, etc) */
 .quoted-block, .repost-content {
   background: #F9F9F9;
-  border: 1px solid #EEE;
+  border: 1px solid var(--border);
   padding: 10px 12px;
   border-radius: 2px;
   margin-top: 8px;
   font-size: 12px;
-  color: #555;
+  color: var(--text-primary);
 }
 
 .quote-header, .repost-info, .like-info, .search-info, .follow-info, .vote-info, .idle-info, .comment-context {
@@ -1140,19 +1140,19 @@ onUnmounted(() => {
   gap: 6px;
   margin-bottom: 6px;
   font-size: 11px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .icon-small {
-  color: #999;
+  color: var(--text-secondary);
 }
 .icon-small.filled {
-  color: #999; /* Keep icons neutral unless highlighted */
+  color: var(--text-secondary); /* Keep icons neutral unless highlighted */
 }
 
 .search-query {
   font-family: 'JetBrains Mono', monospace;
-  background: #F0F0F0;
+  background: var(--bg-dark);
   padding: 0 4px;
   border-radius: 2px;
 }
@@ -1191,7 +1191,7 @@ onUnmounted(() => {
 }
 
 @keyframes ripple {
-  0% { transform: scale(0.8); opacity: 1; border-color: #CCC; }
+  0% { transform: scale(0.8); opacity: 1; border-color: var(--border); }
   100% { transform: scale(2.5); opacity: 0; border-color: #EAEAEA; }
 }
 
@@ -1212,7 +1212,7 @@ onUnmounted(() => {
 
 /* Logs */
 .system-logs {
-  background: #000;
+  background: var(--surface-hover);
   color: #DDD;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
@@ -1227,7 +1227,7 @@ onUnmounted(() => {
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .log-content {
@@ -1249,7 +1249,7 @@ onUnmounted(() => {
   line-height: 1.5;
 }
 
-.log-time { color: #555; min-width: 75px; }
+.log-time { color: var(--text-primary); min-width: 75px; }
 .log-msg { color: #BBB; word-break: break-all; }
 .mono { font-family: 'JetBrains Mono', monospace; }
 
@@ -1258,8 +1258,8 @@ onUnmounted(() => {
   display: inline-block;
   width: 14px;
   height: 14px;
-  border: 2px solid rgba(255, 255, 255, 0.3);
-  border-top-color: #FFF;
+  border: 2px solid rgba(255, 255, 255, 0.1);
+  border-top-color: var(--text-primary);
   border-radius: 50%;
   animation: spin 0.8s linear infinite;
   margin-right: 6px;

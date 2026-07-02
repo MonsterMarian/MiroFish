@@ -275,7 +275,7 @@ watch(() => props.systemLogs.length, () => {
 <style scoped>
 .workbench-panel {
   height: 100%;
-  background-color: #FAFAFA;
+  background: var(--bg-dark);
   display: flex;
   flex-direction: column;
   position: relative;
@@ -292,10 +292,10 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .step-card {
-  background: #FFF;
+  background: var(--surface);
   border-radius: 8px;
   padding: 20px;
-  box-shadow: 0 2px 8px rgba(0,0,0,0.04);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.4);
   border: 1px solid #EAEAEA;
   transition: all 0.3s ease;
   position: relative; /* For absolute overlay */
@@ -328,7 +328,7 @@ watch(() => props.systemLogs.length, () => {
 
 .step-card.active .step-num,
 .step-card.completed .step-num {
-  color: #000;
+  color: var(--text-primary);
 }
 
 .step-title {
@@ -345,21 +345,21 @@ watch(() => props.systemLogs.length, () => {
   text-transform: uppercase;
 }
 
-.badge.success { background: #E8F5E9; color: #2E7D32; }
-.badge.processing { background: #FF5722; color: #FFF; }
-.badge.accent { background: #FF5722; color: #FFF; }
-.badge.pending { background: #F5F5F5; color: #999; }
+.badge.success { background: var(--surface-hover); color: #2E7D32; }
+.badge.processing { background: #FF5722; color: var(--text-primary); }
+.badge.accent { background: #FF5722; color: var(--text-primary); }
+.badge.pending { background: var(--bg-dark); color: var(--text-secondary); }
 
 .api-note {
   font-family: 'JetBrains Mono', monospace;
   font-size: 10px;
-  color: #999;
+  color: var(--text-secondary);
   margin-bottom: 8px;
 }
 
 .description {
   font-size: 12px;
-  color: #666;
+  color: var(--text-secondary);
   line-height: 1.5;
   margin-bottom: 16px;
 }
@@ -390,12 +390,12 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .entity-tag {
-  background: #F5F5F5;
-  border: 1px solid #EEE;
+  background: var(--bg-dark);
+  border: 1px solid var(--border);
   padding: 4px 10px;
   border-radius: 4px;
   font-size: 11px;
-  color: #333;
+  color: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
   transition: all 0.2s;
 }
@@ -405,8 +405,8 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .entity-tag.clickable:hover {
-    background: #E0E0E0;
-    border-color: #CCC;
+    background: var(--surface-hover);
+    border-color: var(--border);
 }
 
 /* Ontology Detail Overlay */
@@ -416,11 +416,11 @@ watch(() => props.systemLogs.length, () => {
     left: 20px;
     right: 20px;
     bottom: 20px;
-    background: rgba(255, 255, 255, 0.98);
+    background: rgba(255, 255, 255, 0.1);
     backdrop-filter: blur(4px);
     z-index: 10;
     border: 1px solid #EAEAEA;
-    box-shadow: 0 4px 20px rgba(0,0,0,0.05);
+    box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
     border-radius: 6px;
     display: flex;
     flex-direction: column;
@@ -436,7 +436,7 @@ watch(() => props.systemLogs.length, () => {
     align-items: center;
     padding: 12px 16px;
     border-bottom: 1px solid #EAEAEA;
-    background: #FAFAFA;
+    background: var(--bg-dark);
 }
 
 .detail-title-group {
@@ -448,8 +448,8 @@ watch(() => props.systemLogs.length, () => {
 .detail-type-badge {
     font-size: 9px;
     font-weight: 700;
-    color: #FFF;
-    background: #000;
+    color: var(--text-primary);
+    background: var(--surface-hover);
     padding: 2px 6px;
     border-radius: 2px;
     text-transform: uppercase;
@@ -465,13 +465,13 @@ watch(() => props.systemLogs.length, () => {
     background: none;
     border: none;
     font-size: 18px;
-    color: #999;
+    color: var(--text-secondary);
     cursor: pointer;
     line-height: 1;
 }
 
 .close-btn:hover {
-    color: #333;
+    color: var(--text-primary);
 }
 
 .detail-body {
@@ -482,7 +482,7 @@ watch(() => props.systemLogs.length, () => {
 
 .detail-desc {
     font-size: 12px;
-    color: #444;
+    color: var(--text-primary);
     line-height: 1.5;
     margin-bottom: 16px;
     padding-bottom: 12px;
@@ -514,23 +514,23 @@ watch(() => props.systemLogs.length, () => {
     gap: 6px;
     align-items: baseline;
     padding: 4px;
-    background: #F9F9F9;
+    background: var(--surface-hover);
     border-radius: 4px;
 }
 
 .attr-name {
     font-family: 'JetBrains Mono', monospace;
     font-weight: 600;
-    color: #000;
+    color: var(--text-primary);
 }
 
 .attr-type {
-    color: #999;
+    color: var(--text-secondary);
     font-size: 10px;
 }
 
 .attr-desc {
-    color: #555;
+    color: var(--text-primary);
     flex: 1;
     min-width: 150px;
 }
@@ -543,11 +543,11 @@ watch(() => props.systemLogs.length, () => {
 
 .example-tag {
     font-size: 11px;
-    background: #FFF;
+    background: var(--surface);
     border: 1px solid #E0E0E0;
     padding: 3px 8px;
     border-radius: 12px;
-    color: #555;
+    color: var(--text-primary);
 }
 
 .conn-item {
@@ -556,14 +556,14 @@ watch(() => props.systemLogs.length, () => {
     gap: 8px;
     font-size: 11px;
     padding: 6px;
-    background: #F5F5F5;
+    background: var(--bg-dark);
     border-radius: 4px;
     font-family: 'JetBrains Mono', monospace;
 }
 
 .conn-node {
     font-weight: 600;
-    color: #333;
+    color: var(--text-primary);
 }
 
 .conn-arrow {
@@ -575,7 +575,7 @@ watch(() => props.systemLogs.length, () => {
   display: grid;
   grid-template-columns: 1fr 1fr 1fr;
   gap: 12px;
-  background: #F9F9F9;
+  background: var(--surface-hover);
   padding: 16px;
   border-radius: 6px;
 }
@@ -588,13 +588,13 @@ watch(() => props.systemLogs.length, () => {
   display: block;
   font-size: 20px;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
   font-family: 'JetBrains Mono', monospace;
 }
 
 .stat-label {
   font-size: 9px;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   margin-top: 4px;
   display: block;
@@ -603,8 +603,8 @@ watch(() => props.systemLogs.length, () => {
 /* Step 03 Button */
 .action-btn {
   width: 100%;
-  background: #000;
-  color: #FFF;
+  background: var(--surface-hover);
+  color: var(--text-primary);
   border: none;
   padding: 14px;
   border-radius: 4px;
@@ -645,7 +645,7 @@ watch(() => props.systemLogs.length, () => {
 
 /* System Logs */
 .system-logs {
-  background: #000;
+  background: var(--surface-hover);
   color: #DDD;
   padding: 16px;
   font-family: 'JetBrains Mono', monospace;
@@ -660,7 +660,7 @@ watch(() => props.systemLogs.length, () => {
   padding-bottom: 8px;
   margin-bottom: 8px;
   font-size: 10px;
-  color: #888;
+  color: var(--text-secondary);
 }
 
 .log-content {
@@ -689,7 +689,7 @@ watch(() => props.systemLogs.length, () => {
 }
 
 .log-time {
-  color: #666;
+  color: var(--text-secondary);
   min-width: 75px;
 }
 

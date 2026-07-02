@@ -178,15 +178,15 @@
           <div v-else-if="currentPhase < 1" class="graph-waiting">
             <div class="waiting-icon">
               <svg viewBox="0 0 100 100" class="network-icon">
-                <circle cx="50" cy="20" r="8" fill="none" stroke="#000" stroke-width="1.5"/>
-                <circle cx="20" cy="60" r="8" fill="none" stroke="#000" stroke-width="1.5"/>
-                <circle cx="80" cy="60" r="8" fill="none" stroke="#000" stroke-width="1.5"/>
-                <circle cx="50" cy="80" r="8" fill="none" stroke="#000" stroke-width="1.5"/>
-                <line x1="50" y1="28" x2="25" y2="54" stroke="#000" stroke-width="1"/>
-                <line x1="50" y1="28" x2="75" y2="54" stroke="#000" stroke-width="1"/>
-                <line x1="28" y1="60" x2="72" y2="60" stroke="#000" stroke-width="1" stroke-dasharray="4"/>
-                <line x1="50" y1="72" x2="26" y2="66" stroke="#000" stroke-width="1"/>
-                <line x1="50" y1="72" x2="74" y2="66" stroke="#000" stroke-width="1"/>
+                <circle cx="50" cy="20" r="8" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/>
+                <circle cx="20" cy="60" r="8" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/>
+                <circle cx="80" cy="60" r="8" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/>
+                <circle cx="50" cy="80" r="8" fill="none" stroke="var(--text-secondary)" stroke-width="1.5"/>
+                <line x1="50" y1="28" x2="25" y2="54" stroke="var(--text-secondary)" stroke-width="1"/>
+                <line x1="50" y1="28" x2="75" y2="54" stroke="var(--text-secondary)" stroke-width="1"/>
+                <line x1="28" y1="60" x2="72" y2="60" stroke="var(--text-secondary)" stroke-width="1" stroke-dasharray="4"/>
+                <line x1="50" y1="72" x2="26" y2="66" stroke="var(--text-secondary)" stroke-width="1"/>
+                <line x1="50" y1="72" x2="74" y2="66" stroke="var(--text-secondary)" stroke-width="1"/>
               </svg>
             </div>
             <p class="waiting-text">等待本体生成</p>
@@ -1092,14 +1092,7 @@ onUnmounted(() => {
 
 <style scoped>
 /* 变量 */
-:root {
-  --black: #000000;
-  --white: #FFFFFF;
-  --orange: #FF6B35;
-  --gray-light: #F5F5F5;
-  --gray-border: #E0E0E0;
-  --gray-text: #666666;
-}
+
 
 .process-page {
   min-height: 100vh;
@@ -1115,8 +1108,8 @@ onUnmounted(() => {
   justify-content: space-between;
   padding: 0 24px;
   height: 56px;
-  background: #000;
-  color: #fff;
+  background: var(--surface-hover);
+  color: var(--text-primary);
   z-index: 10;
   position: relative;
 }
@@ -1144,7 +1137,7 @@ onUnmounted(() => {
 
 .step-badge {
   background: #FF6B35;
-  color: #fff;
+  color: var(--text-primary);
   padding: 2px 8px;
   font-size: 0.7rem;
   font-weight: 600;
@@ -1155,7 +1148,7 @@ onUnmounted(() => {
 .step-name {
   font-size: 0.85rem;
   letter-spacing: 0.05em;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .nav-status {
@@ -1191,7 +1184,7 @@ onUnmounted(() => {
 
 .status-text {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 /* 主内容区 */
@@ -1209,7 +1202,7 @@ onUnmounted(() => {
   flex-direction: column;
   border-right: 1px solid #E0E0E0;
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1);
-  background: #fff;
+  background: var(--surface);
   z-index: 5;
 }
 
@@ -1224,7 +1217,7 @@ onUnmounted(() => {
   justify-content: space-between;
   padding: 12px 24px;
   border-bottom: 1px solid #E0E0E0;
-  background: #fff;
+  background: var(--surface);
   height: 50px;
 }
 
@@ -1250,7 +1243,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 16px;
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .stat-item {
@@ -1261,7 +1254,7 @@ onUnmounted(() => {
 
 .stat-val {
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .stat-divider {
@@ -1284,13 +1277,13 @@ onUnmounted(() => {
   border: 1px solid transparent;
   cursor: pointer;
   transition: all 0.2s;
-  color: #666;
+  color: var(--text-secondary);
   border-radius: 2px;
 }
 
 .action-btn:hover:not(:disabled) {
-  background: #F5F5F5;
-  color: #000;
+  background: var(--bg-dark);
+  color: var(--text-primary);
 }
 
 .action-btn:disabled {
@@ -1345,7 +1338,7 @@ onUnmounted(() => {
 .loading-ring:nth-child(1) {
   width: 80px;
   height: 80px;
-  border-top-color: #000;
+  border-top-color: var(--text-primary);
 }
 
 .loading-ring:nth-child(2) {
@@ -1362,7 +1355,7 @@ onUnmounted(() => {
   height: 40px;
   top: 20px;
   left: 20px;
-  border-bottom-color: #666;
+  border-bottom-color: var(--text-secondary);
   animation-delay: 0.4s;
 }
 
@@ -1373,13 +1366,13 @@ onUnmounted(() => {
 .loading-text,
 .waiting-text {
   font-size: 0.9rem;
-  color: #333;
+  color: var(--text-primary);
   margin: 0 0 8px;
 }
 
 .waiting-hint {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--text-secondary);
   margin: 0;
 }
 
@@ -1434,9 +1427,9 @@ onUnmounted(() => {
   right: 16px;
   width: 320px;
   max-height: calc(100% - 32px);
-  background: #fff;
+  background: var(--surface);
   border: 1px solid #E0E0E0;
-  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 20px rgba(0, 0, 0, 0.4);
   overflow: hidden;
   display: flex;
   flex-direction: column;
@@ -1448,20 +1441,20 @@ onUnmounted(() => {
   align-items: center;
   gap: 10px;
   padding: 12px 16px;
-  background: #FAFAFA;
+  background: var(--bg-dark);
   border-bottom: 1px solid #E0E0E0;
 }
 
 .detail-title {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .detail-badge {
   padding: 2px 10px;
   font-size: 0.75rem;
-  color: #fff;
+  color: var(--text-primary);
   border-radius: 2px;
 }
 
@@ -1475,13 +1468,13 @@ onUnmounted(() => {
   background: none;
   border: none;
   font-size: 1.2rem;
-  color: #999;
+  color: var(--text-secondary);
   cursor: pointer;
   transition: color 0.2s;
 }
 
 .detail-close:hover {
-  color: #333;
+  color: var(--text-primary);
 }
 
 .detail-content {
@@ -1498,21 +1491,21 @@ onUnmounted(() => {
 
 .detail-label {
   font-size: 0.8rem;
-  color: #999;
+  color: var(--text-secondary);
   min-width: 70px;
   flex-shrink: 0;
 }
 
 .detail-value {
   font-size: 0.85rem;
-  color: #333;
+  color: var(--text-primary);
   word-break: break-word;
 }
 
 .detail-value.uuid {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .detail-section {
@@ -1522,7 +1515,7 @@ onUnmounted(() => {
 .detail-summary {
   margin: 8px 0 0 0;
   font-size: 0.85rem;
-  color: #333;
+  color: var(--text-primary);
   line-height: 1.6;
   padding: 10px;
   background: #F9F9F9;
@@ -1538,9 +1531,9 @@ onUnmounted(() => {
 .label-tag {
   padding: 2px 8px;
   font-size: 0.75rem;
-  background: #F0F0F0;
+  background: var(--bg-dark);
   border: 1px solid #E0E0E0;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 /* 边详情关系展示 */
@@ -1559,29 +1552,29 @@ onUnmounted(() => {
 .edge-target {
   font-size: 0.85rem;
   font-weight: 500;
-  color: #333;
+  color: var(--text-primary);
 }
 
 .edge-arrow {
-  color: #999;
+  color: var(--text-secondary);
 }
 
 .edge-type {
   padding: 2px 8px;
   font-size: 0.75rem;
   background: #FF6B35;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .detail-value.highlight {
   font-weight: 600;
-  color: #000;
+  color: var(--text-primary);
 }
 
 .detail-subtitle {
   font-size: 0.9rem;
   font-weight: 600;
-  color: #333;
+  color: var(--text-primary);
   margin: 16px 0 12px 0;
   padding-bottom: 8px;
   border-bottom: 1px solid #E0E0E0;
@@ -1606,13 +1599,13 @@ onUnmounted(() => {
 }
 
 .property-key {
-  color: #666;
+  color: var(--text-secondary);
   margin-right: 8px;
   font-family: 'JetBrains Mono', monospace;
 }
 
 .property-value {
-  color: #333;
+  color: var(--text-primary);
   word-break: break-word;
 }
 
@@ -1629,9 +1622,9 @@ onUnmounted(() => {
   padding: 6px 10px;
   font-size: 0.75rem;
   font-family: 'JetBrains Mono', monospace;
-  background: #F0F0F0;
+  background: var(--bg-dark);
   border: 1px solid #E0E0E0;
-  color: #666;
+  color: var(--text-secondary);
   word-break: break-all;
 }
 
@@ -1648,7 +1641,7 @@ onUnmounted(() => {
   gap: 16px;
   padding: 12px 24px;
   border-top: 1px solid #E0E0E0;
-  background: #FAFAFA;
+  background: var(--bg-dark);
 }
 
 .legend-item {
@@ -1665,11 +1658,11 @@ onUnmounted(() => {
 }
 
 .legend-label {
-  color: #333;
+  color: var(--text-primary);
 }
 
 .legend-count {
-  color: #999;
+  color: var(--text-secondary);
 }
 
 /* 右侧面板 - 50% default */
@@ -1678,7 +1671,7 @@ onUnmounted(() => {
   flex: none;
   display: flex;
   flex-direction: column;
-  background: #fff;
+  background: var(--surface);
   transition: width 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.3s ease, transform 0.3s ease;
   overflow: hidden;
   opacity: 1;
@@ -1692,8 +1685,8 @@ onUnmounted(() => {
 }
 
 .right-panel .panel-header.dark-header {
-  background: #000;
-  color: #fff;
+  background: var(--surface-hover);
+  color: var(--text-primary);
   border-bottom: none;
 }
 
@@ -1735,12 +1728,12 @@ onUnmounted(() => {
   align-items: flex-start;
   gap: 16px;
   padding: 16px;
-  background: #FAFAFA;
+  background: var(--bg-dark);
   border-bottom: 1px solid #E0E0E0;
 }
 
 .process-phase.active .phase-header {
-  background: #FFF5F2;
+  background: var(--surface-hover);
 }
 
 .process-phase.completed .phase-header {
@@ -1774,25 +1767,25 @@ onUnmounted(() => {
 
 .phase-api {
   font-size: 0.75rem;
-  color: #999;
+  color: var(--text-secondary);
   font-family: 'JetBrains Mono', monospace;
 }
 
 .phase-status {
   font-size: 0.75rem;
   padding: 4px 10px;
-  background: #eee;
-  color: #666;
+  background: var(--surface-hover);
+  color: var(--text-secondary);
 }
 
 .phase-status.active {
   background: #FF6B35;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 .phase-status.completed {
   background: #1A936F;
-  color: #fff;
+  color: var(--text-primary);
 }
 
 /* 阶段详情 */
@@ -1810,9 +1803,9 @@ onUnmounted(() => {
 .entity-tag {
   font-size: 0.75rem;
   padding: 4px 10px;
-  background: #F5F5F5;
+  background: var(--bg-dark);
   border: 1px solid #E0E0E0;
-  color: #333;
+  color: var(--text-primary);
 }
 
 /* 关系列表 */
@@ -1834,7 +1827,7 @@ onUnmounted(() => {
 
 .rel-source,
 .rel-target {
-  color: #333;
+  color: var(--text-primary);
 }
 
 .rel-arrow {
@@ -1848,7 +1841,7 @@ onUnmounted(() => {
 
 .relation-more {
   padding-top: 8px;
-  color: #999;
+  color: var(--text-secondary);
   font-size: 0.75rem;
 }
 
@@ -1858,7 +1851,7 @@ onUnmounted(() => {
   align-items: center;
   gap: 12px;
   padding: 12px;
-  background: #FFF5F2;
+  background: var(--surface-hover);
   border: 1px solid #FFE0D6;
 }
 
@@ -1873,7 +1866,7 @@ onUnmounted(() => {
 
 .progress-text {
   font-size: 0.85rem;
-  color: #333;
+  color: var(--text-primary);
 }
 
 /* 等待状态 */
@@ -1886,7 +1879,7 @@ onUnmounted(() => {
 
 .waiting-hint {
   font-size: 0.85rem;
-  color: #999;
+  color: var(--text-secondary);
 }
 
 /* 进度条 */
@@ -1910,7 +1903,7 @@ onUnmounted(() => {
 }
 
 .progress-message {
-  color: #666;
+  color: var(--text-secondary);
 }
 
 .progress-percent {
@@ -1928,20 +1921,20 @@ onUnmounted(() => {
   flex: 1;
   text-align: center;
   padding: 12px;
-  background: #F5F5F5;
+  background: var(--bg-dark);
 }
 
 .result-value {
   display: block;
   font-size: 1.5rem;
   font-weight: 700;
-  color: #000;
+  color: var(--text-primary);
   margin-bottom: 4px;
 }
 
 .result-label {
   font-size: 0.7rem;
-  color: #999;
+  color: var(--text-secondary);
   text-transform: uppercase;
   letter-spacing: 0.05em;
 }
@@ -1960,8 +1953,8 @@ onUnmounted(() => {
   justify-content: center;
   gap: 10px;
   padding: 16px;
-  background: #000;
-  color: #fff;
+  background: var(--surface-hover);
+  color: var(--text-primary);
   border: none;
   font-size: 1rem;
   font-weight: 500;
@@ -1986,7 +1979,7 @@ onUnmounted(() => {
 /* 项目信息面板 */
 .project-panel {
   border-top: 1px solid #E0E0E0;
-  background: #FAFAFA;
+  background: var(--bg-dark);
 }
 
 .project-header {
@@ -2024,12 +2017,12 @@ onUnmounted(() => {
 }
 
 .item-label {
-  color: #999;
+  color: var(--text-secondary);
   flex-shrink: 0;
 }
 
 .item-value {
-  color: #333;
+  color: var(--text-primary);
   text-align: right;
   max-width: 60%;
   word-break: break-all;
@@ -2038,7 +2031,7 @@ onUnmounted(() => {
 .item-value.code {
   font-family: 'JetBrains Mono', monospace;
   font-size: 0.75rem;
-  color: #666;
+  color: var(--text-secondary);
 }
 
 /* 响应式 */

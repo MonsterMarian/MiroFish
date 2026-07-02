@@ -61,8 +61,47 @@ class LLMClient:
         if response_format:
             kwargs["response_format"] = response_format
         
-        response = self.client.chat.completions.create(**kwargs)
-        content = response.choices[0].message.content
+        import time
+        import logging
+        logger = logging.getLogger('mirofish.api')
+        
+        models_to_try = [self.model]
+        if "nvidia.com" in (self.base_url or "").lower():
+            fallbacks = [
+                "meta/llama-3.1-70b-instruct", 
+                "meta/llama-3.1-8b-instruct", 
+                "mistralai/mixtral-8x22b-instruct-v0.1"
+            ]
+            for fb in fallbacks:
+                if fb not in models_to_try:
+                    models_to_try.append(fb)
+
+        last_exception = None
+        response_obj = None
+        
+        for current_model in models_to_try:
+            kwargs["model"] = current_model
+            max_retries = 2  # 每个模型尝试2次
+            success = False
+            
+            for attempt in range(max_retries):
+                try:
+                    logger.info(f"正在尝试使用模型: {current_model} (第 {attempt + 1} 次尝试)")
+                    response_obj = self.client.chat.completions.create(**kwargs)
+                    success = True
+                    break
+                except Exception as e:
+                    last_exception = e
+                    logger.warning(f"模型 {current_model} 请求失败 (attempt {attempt + 1}/{max_retries}): {str(e)}")
+                    if attempt < max_retries - 1:
+                        time.sleep(2 ** attempt)
+            
+            if success:
+                break
+        else:
+            raise ValueError(f"所有级联模型均请求失败，最后一次报错: {str(last_exception)}")
+            
+        content = response_obj.choices[0].message.content
         # 部分模型（如MiniMax M2.5）会在content中包含<think>思考内容，需要移除
         content = re.sub(r'<think>[\s\S]*?</think>', '', content).strip()
         return content
