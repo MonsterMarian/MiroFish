@@ -317,16 +317,16 @@ const startSimulation = () => {
 
 .home-container {
   min-height: 100vh;
-  background: var(--white);
+  background: var(--bg-dark);
   font-family: var(--font-sans);
-  color: var(--black);
+  color: var(--text-primary);
 }
 
 /* 顶部导航 */
 .navbar {
   height: 60px;
-  background: var(--black);
-  color: var(--white);
+  background: var(--surface);
+  color: var(--text-primary);
   display: flex;
   justify-content: space-between;
   align-items: center;
@@ -347,7 +347,7 @@ const startSimulation = () => {
 }
 
 .github-link {
-  color: var(--white);
+  color: var(--text-primary);
   text-decoration: none;
   font-family: var(--font-mono);
   font-size: 0.9rem;
@@ -397,7 +397,7 @@ const startSimulation = () => {
 
 .orange-tag {
   background: var(--orange);
-  color: var(--white);
+  color: var(--text-primary);
   padding: 4px 10px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -416,7 +416,7 @@ const startSimulation = () => {
   font-weight: 500;
   margin: 0 0 40px 0;
   letter-spacing: -2px;
-  color: var(--black);
+  color: var(--text-primary);
 }
 
 .gradient-text {
@@ -441,7 +441,7 @@ const startSimulation = () => {
 }
 
 .highlight-bold {
-  color: var(--black);
+  color: var(--text-primary);
   font-weight: 700;
 }
 
@@ -457,14 +457,14 @@ const startSimulation = () => {
   border-radius: 2px;
   font-family: var(--font-mono);
   font-size: 0.9em;
-  color: var(--black);
+  color: var(--text-primary);
   font-weight: 600;
 }
 
 .slogan-text {
   font-size: 1.2rem;
   font-weight: 520;
-  color: var(--black);
+  color: var(--text-primary);
   letter-spacing: 1px;
   border-left: 3px solid var(--orange);
   padding-left: 15px;
@@ -634,7 +634,7 @@ const startSimulation = () => {
 .step-num {
   font-family: var(--font-mono);
   font-weight: 700;
-  color: var(--black);
+  color: var(--text-primary);
   opacity: 0.3;
 }
 
@@ -739,7 +739,7 @@ const startSimulation = () => {
 .file-item {
   display: flex;
   align-items: center;
-  background: var(--white);
+  background: var(--bg-dark);
   padding: 8px 12px;
   border: 1px solid var(--border);
   font-family: var(--font-mono);
@@ -811,8 +811,8 @@ const startSimulation = () => {
 
 .start-engine-btn {
   width: 100%;
-  background: var(--black);
-  color: var(--white);
+  background: var(--surface);
+  color: var(--text-primary);
   border: none;
   padding: 20px;
   font-family: var(--font-mono);
@@ -830,8 +830,8 @@ const startSimulation = () => {
 
 /* 可点击状态（非禁用） */
 .start-engine-btn:not(:disabled) {
-  background: var(--black);
-  border: 1px solid var(--black);
+  background: var(--surface);
+  borderborder: 1px solid var(--border);var(--border);
   animation: pulse-border 2s infinite;
 }
 
