@@ -396,8 +396,9 @@ const startSimulation = () => {
 }
 
 .orange-tag {
-  background: var(--orange);
+  background: var(--surface-hover);
   color: var(--text-primary);
+  border: 1px solid var(--text-secondary);
   padding: 4px 10px;
   font-weight: 700;
   letter-spacing: 1px;
@@ -837,6 +838,7 @@ const startSimulation = () => {
 
 .start-engine-btn:hover:not(:disabled) {
   background: var(--orange);
+  color: var(--bg-dark);
   border-color: var(--orange);
   transform: translateY(-2px);
 }
