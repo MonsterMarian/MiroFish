@@ -831,7 +831,7 @@ const startSimulation = () => {
 /* 可点击状态（非禁用） */
 .start-engine-btn:not(:disabled) {
   background: var(--surface);
-  borderborder: 1px solid var(--border);var(--border);
+  border: 1px solid var(--border);
   animation: pulse-border 2s infinite;
 }
 
