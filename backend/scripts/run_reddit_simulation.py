@@ -440,30 +440,20 @@ class RedditSimulationRunner:
         - LLM_BASE_URL: API基础URL
         - LLM_MODEL_NAME: 模型名称
         """
-        # 优先从 .env 读取配置
         llm_api_key = os.environ.get("LLM_API_KEY", "")
         llm_base_url = os.environ.get("LLM_BASE_URL", "")
         llm_model = os.environ.get("LLM_MODEL_NAME", "")
         
-        # 如果 .env 中没有，则使用 config 作为备用
         if not llm_model:
             llm_model = self.config.get("llm_model", "gpt-4o-mini")
-        
-        # 设置 camel-ai 所需的环境变量
-        if llm_api_key:
-            os.environ["OPENAI_API_KEY"] = llm_api_key
-        
-        if not os.environ.get("OPENAI_API_KEY"):
-            raise ValueError("缺少 API Key 配置，请在项目根目录 .env 文件中设置 LLM_API_KEY")
-        
-        if llm_base_url:
-            os.environ["OPENAI_API_BASE_URL"] = llm_base_url
         
         print(f"LLM配置: model={llm_model}, base_url={llm_base_url[:40] if llm_base_url else '默认'}...")
         
         return ModelFactory.create(
             model_platform=ModelPlatformType.OPENAI,
             model_type=llm_model,
+            api_key=llm_api_key if llm_api_key else None,
+            url=llm_base_url if llm_base_url else None,
         )
     
     def _get_active_agents_for_round(
@@ -600,24 +590,19 @@ class RedditSimulationRunner:
                 content = post.get("content", "")
                 try:
                     agent = self.env.agent_graph.get_agent(agent_id)
-                    if agent in initial_actions:
-                        if not isinstance(initial_actions[agent], list):
-                            initial_actions[agent] = [initial_actions[agent]]
-                        initial_actions[agent].append(ManualAction(
-                            action_type=ActionType.CREATE_POST,
-                            action_args={"content": content}
-                        ))
-                    else:
-                        initial_actions[agent] = ManualAction(
-                            action_type=ActionType.CREATE_POST,
-                            action_args={"content": content}
-                        )
+                    if agent not in initial_actions:
+                        initial_actions[agent] = []
+                    initial_actions[agent].append(ManualAction(
+                        action_type=ActionType.CREATE_POST,
+                        action_args={"content": content}
+                    ))
                 except Exception as e:
                     print(f"  警告: 无法为Agent {agent_id}创建初始帖子: {e}")
             
             if initial_actions:
                 await self.env.step(initial_actions)
-                print(f"  已发布 {len(initial_actions)} 条初始帖子")
+                total_posts = sum(len(v) for v in initial_actions.values())
+                print(f"  已发布 {total_posts} 条初始帖子")
         
         # 主模拟循环
         print("\n开始模拟循环...")
